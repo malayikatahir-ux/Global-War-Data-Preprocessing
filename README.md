@@ -3,29 +3,29 @@
 
 ## What Is This?
 
-A dataset of 3,000 real-world military conflicts — countries, 
+A dataset of 3,000 real-world military conflicts , countries, 
 casualties, economic losses, refugees, terrain, climate, weapons, 
-outcomes — 30 columns of raw, imperfect, real-world data.
+outcomes : 30 columns of raw, imperfect, real-world data.
 
 Real-world data is never clean. This notebook proves it.
 
 ---
 
-## What Was Done — Step by Step
+## What Was Done | Step by Step
 
-### Step 1 — Understanding the Data
+### Step 1 : Understanding the Data
 Before touching anything, the dataset was fully explored —
 data types checked, missing values counted, statistical 
 summaries reviewed. Know your data before you change it.
 
-### Step 2 — Missing Values
-Three columns had missing data — Alliance_A, Alliance_B, 
+### Step 2 : Missing Values
+Three columns had missing data : Alliance_A, Alliance_B, 
 and Resource_Dispute. Each was handled with logic, not 
 just deletion. Missing alliances? Filled as "Unknown". 
 Missing resource dispute info? Filled as "Not Reported".
 
-### Step 3 — Encoding Categorical Columns
-Machines don't understand "Desert" or "Civil War" — 
+### Step 3 : Encoding Categorical Columns
+Machines don't understand "Desert" or "Civil War" ,
 they understand numbers. Three encoding strategies used:
 
   • Label Encoding     → for binary columns (Yes/No)
@@ -33,8 +33,8 @@ they understand numbers. Three encoding strategies used:
   • One-Hot Encoding   → for unordered categories like 
                          Conflict_Type, Terrain, Climate_Zone
 
-### Step 4 — Outlier Detection & Removal (The Hard Part)
-Every single numerical feature — all 17 of them — got its 
+### Step 4 : Outlier Detection & Removal (The Hard Part)
+Every single numerical feature : all 17 of them — got its 
 own individual boxplot. Not combined. Not rushed. One by one.
 
 Outliers removed using the IQR method:
@@ -43,11 +43,11 @@ Outliers removed using the IQR method:
 
 Anything beyond these bounds? Removed. Data integrity first.
 
-### Step 5 — Distribution Visualization
+### Step 5 : Distribution Visualization
 After outlier removal, distribution plots (displot) created 
 for numerical features to confirm clean, reasonable spread.
 
-### Step 6 — Scaling (Two Methods, Side by Side)
+### Step 6 : Scaling (Two Methods, Side by Side)
 All features scaled using subplot comparisons:
 
   • Standard Scaler   → mean=0, std=1 (for ML algorithms 
